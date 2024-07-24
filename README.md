@@ -1,3 +1,48 @@
+```mermaid
+flowchart TB
+	subgraph ApproverLogin
+	direction TB
+	SSO
+	end
+
+	subgraph viewPendingApp
+	direction TB
+	AppList
+	end
+
+	subgraph verifyUser
+	direction TB
+	ManualProcessCMDB
+    Email
+    Chat
+    end
+
+	subgraph ApproveORReject
+	Action	
+    end
+
+    subgraph Notification
+    direction TB	
+    Email
+    Teams
+    Tracker	
+    end
+
+    subgraph Verification
+    direction TB    App
+    KeyNSecret
+    end
+
+	ApproverLogin --> viewPendingApp
+    viewPendingApp --> verifyUser
+    verifyUser --> ApproveORReject
+    ApproveORReject --> Notification
+    Notification --> Verification
+```
+
+
+
+
 # jhipsterSampleApplication
 
 This application was generated using JHipster 7.1.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.1.0](https://www.jhipster.tech/documentation-archive/v7.1.0).
